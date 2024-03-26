@@ -1,9 +1,8 @@
 ﻿$serverName = "LAPTOP-CNIM3EMA\SQLEXPRESS"    
-$databaseName = "master"  # Replace with your actual database name
-$username = "WissalBekhti"          # Replace with your SQL Server username
-$password = "--"          # Replace with your SQL Server password
+$databaseName = "master" 
+$username = "WissalBekhti"         
+$password = "--"       
 
-# Connection string with credentials
 $connectionString = "Server=$serverName;Database=$databaseName;User Id=$username;Password=$password;"
 
 # SQL query
@@ -43,7 +42,6 @@ $payloadArray = @()
 foreach ($row in $data) {
     $endpoint = "https://api.powerbi.com/beta/93401443-f80a-4526-932b-487074bef423/datasets/d845aea7-8a93-49b2-9a87-d8a18b03f8f9/rows?experience=power-bi&clientSideAuth=0&key=jxtZVtnZdOaiLEnOexo%2FbUfaWTFmqZMXokszNUkxx9r6CTHi9xNnepofT2JLT6EJ0jdQzw45u4x4URowLBOEOQ%3D%3D"
     
-    # Create payload for each row
     $payload = @{
         "Sample"   = $row.Sample
         "x"        = $row.x
@@ -59,7 +57,3 @@ foreach ($row in $data) {
     # Send the current payload to the API
     Invoke-RestMethod -Method Post -Uri "$endpoint" -Body (ConvertTo-Json @($payload))
 }
-
-
-
-
