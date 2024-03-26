@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote for your party</title>
+    <style>
+        body {
+            color: #333;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='vote1.png') }}");
+            background-size: cover;
+            margin: 0;
+            padding-top: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            margin-top: 50px;
+        }
+
+        .vote-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .radio-group label {
+            margin: 5px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px; 
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="vote-title">Vote for your party</div>
+        <form method="POST" action="/vote">
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="partyA" name="party" value="Party A">
+                    <label for="partyA">Party A</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="partyB" name="party" value="Party B">
+                    <label for="partyB">Party B</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="partyC" name="party" value="Party C">
+                    <label for="partyC">Party C</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="partyD" name="party" value="Party D">
+                    <label for="partyD">Party D</label>
+                </div>
+            </div>
+            <input type="submit" value="Submit Vote">
+        </form>
+    </div>
+</body>
+</html>
