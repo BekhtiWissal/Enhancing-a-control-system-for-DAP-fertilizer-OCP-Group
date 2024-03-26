@@ -1,6 +1,7 @@
 This was done as part of an internship at OCP Group. The goal is to utilize online analysis for quality 
 improvement in the manufacturing of DAP fertilizer, and use PowerBi Dashboards for visualizations of this 
 control system.
+
 ![image](https://github.com/BekhtiWissal/Enhancing-a-control-system-for-DAP-fertilizer-OCP-Group/assets/135755494/0ef2fd5c-4e4e-4cf9-9ffd-79c01be67516)
 
 The HAVER CPA solution was used for collecting material from the bulk source, measurement and analysis devices 
